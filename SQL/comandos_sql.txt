@@ -1,0 +1,13 @@
+------------------
+-- distinc
+------------------
+select distinc col_1
+from tabla
+
+------------------
+-- limit
+------------------
+select *
+from tabla
+limit number
+
