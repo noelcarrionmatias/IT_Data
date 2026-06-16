@@ -15,7 +15,7 @@ limit number;
 -- join (full, inner, left, right)
 ------------------
 select a.*, b.*
-from tabla1 as 1
+from tabla1 as a
 full, inner, left, right join tabla2 as b 
 on a.id = b.id;
 
