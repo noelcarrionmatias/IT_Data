@@ -20,6 +20,38 @@ full, inner, left, right join tabla2 as b
 on a.id = b.id;
 
 ------------------
+-- union / union all
+------------------
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+
+-- UNION -> junta por columna sin duplicados
+-- UNION ALL -> junta por columna CON duplicados
+
+-- Ejemplo
+-- union (11 filas nens + 11 filas nenes = 21 filas) (hay un repetido en nens)
+SELECT * 
+FROM nens
+UNION 
+SELECT * 
+FROM nenes;
+-- union all (11 filas nens + 11 filas nenes = 21 filas) (copia el repetido en nens)
+select *
+from nens
+union all
+select *
+from nenes;
+
+-- Tambien con condiciones
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+
+------------------
 -- sum/max/min/avg
 ------------------
 select sum/max/min/avg(col_1)

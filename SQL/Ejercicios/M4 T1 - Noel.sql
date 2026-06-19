@@ -26,41 +26,63 @@ group by a.titulo
 order by 2 desc, 3 desc;
 
 -- 4.Mostra la quantitat d'usuaris que no han realitzat cap préstec.
-select a.usuario_id as 'quantitat usuarios sense préstec'
+select count(a.usuario_id) as 'quantitat usuarios sense préstec'
 from usuarios as a
 left join prestamos as b
 	on a.usuario_id = b.usuario_id
 where b.usuario_id is NULL;
 
--- COMPROBAR
-SELECT *
-FROM prestamos
-WHERE USUARIO_ID = 43;
 
 -- 5.Mostra el nom dels 3 usuaris que han fet més préstecs.
-select a.usuario_id, b.nombre, count(a.libro_id) as 'numero de prestamos'
+select b.usuario_id, b.nombre, b.apellido, count(a.libro_id) as 'numero de prestamos'
 from prestamos as a
 inner join usuarios as b
 	on a.usuario_id = b.usuario_id
-group by a.usuario_id, b.nombre
-order by 3 desc
+group by a.usuario_id
+order by 4 desc
 limit 3;
 
 -- 6.Mostra el nom i l'ID dels usuaris estrangers i que han hagut de pagar una multa per retard en la devolució del préstec superior a 10 euros.
-select a.nombre, a.usuario_id, a.nacionalidad, sum(b.dias_retraso) as 'total dias retraso'
+select a.nombre, a.usuario_id
 from usuarios as a
-right join prestamos as b
+inner join prestamos as b
 	on a.usuario_id = b.usuario_id
+inner join multas as c
+	on b.prestamo_id = c.prestamo_id
 where a.nacionalidad = 'extranjera'
-and b.dias_retraso > 0
+and importe > 10
+and pagada = 1
 group by a.usuario_id;
 
--- comprobar 
-select *
-from prestamos
-where usuario_id = 5;
-select *
-from usuarios
-where usuario_id = 5;
 -- 7.Mostra l'autor nascut després de 1980 que ha generat més préstecs en usuaris espanyols. A més, només s'han de comptabilitzar els préstecs finalitzats (ok o amb retard).
+select a.nombre, count(c.prestamo_id) as 'número de prestamos'
+from 
+autores as a
+inner join libros as b
+	on a.autor_id = b.autor_id
+inner join prestamos as c
+	on b.libro_id = c.libro_id
+inner join usuarios as d
+	on c.usuario_id = d.usuario_id
+where a.año_nacimiento > 1980
+	and d.nacionalidad = 'española'
+	and c.estado_prestamo IN ('finalizado ok', 'finalizado con retraso')
+    -- and c.estado_prestamo like '%finalizado%'
+group by a.autor_id, a.nombre
+order by 2 desc
+limit 1;
+
 -- 8.Quina és la categoria de llibres que més demanen en préstec les persones que tenen targeta de fidelitat?
+select d.nombre, count(b.prestamo_id) as 'total prestamos'
+from prestamos as b
+inner join libros as a
+	on b.libro_id = a.libro_id
+inner join categorias as d
+	on a.categoria_id = d.categoria_id
+inner join usuarios as c
+	on b.usuario_id = c.usuario_id
+where c.tarjeta_fidelidad = 'Si'
+group by d.categoria_id
+order by 2 desc
+limit 1;
+
