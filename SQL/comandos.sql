@@ -75,3 +75,42 @@ CASE
   ELSE 'High Cost'
 END AS PriceCategory
 FROM Products;
+
+------------------
+-- PARTITION BY
+------------------
+-- Calcula lo que le indiques a partir de la agrupación de la particion (partition by 'district')
+select *
+from (
+    select city, district, neighborhood, ROUND(AVG(price_€/size_m2), 2) AS avg_price_m2,
+        ROW_NUMBER() OVER (	
+			PARTITION BY district
+            ORDER BY AVG(price_€/size_m2) DESC
+        ) AS rank_num
+    FROM housing_data
+    WHERE (district IS NOT NULL or city = 'sant adria de besos')
+      AND neighborhood IS NOT NULL
+    GROUP BY city, district, neighborhood
+) t
+WHERE rank_num <= 3
+ORDER BY district, rank_num;
+
+
+------------------
+-- ROW_NUMBER() OVER ()
+------------------
+-- ROW_NUMBER() indica 1, 2, 3 según cuenta filas y OVER() indica sobre el qué tiene que contar
+select *
+from (
+    select city, district, neighborhood, ROUND(AVG(price_€/size_m2), 2) AS avg_price_m2,
+        ROW_NUMBER() OVER (	
+			PARTITION BY district
+            ORDER BY AVG(price_€/size_m2) DESC
+        ) AS rank_num
+    FROM housing_data
+    WHERE (district IS NOT NULL or city = 'sant adria de besos')
+      AND neighborhood IS NOT NULL
+    GROUP BY city, district, neighborhood
+) t
+WHERE rank_num <= 3
+ORDER BY district, rank_num;
