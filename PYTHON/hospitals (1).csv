@@ -1,0 +1,171 @@
+hospital_id;nombre;localidad;provincia;comunidad_autonoma;presupuesto_anual_millones;num_camas;num_medicos;indice_satisfaccion;porcentaje_ocupacion
+1;Hospital Universitario Torrecardenas;Almeria;Almeria;Andalucia;138.92;645;329;9.5;96.8
+2;Hospital de Poniente;Almeria;Almeria;Andalucia;150.52;575;228;4.2;78.5
+3;Hospital Universitario Puerta del Mar;Cadiz;Cadiz;Andalucia;496.8;834;32;6.4;81.5
+4;Hospital de Jerez;Jerez de la Frontera;Cadiz;Andalucia;149.66;773;56;5.8;50.7
+5;Hospital Universitario Reina Sofia;Cordoba;Cordoba;Andalucia;358.41;277;433;1.9;61.4
+6;Hospital Infanta Margarita;Cordoba;Cordoba;Andalucia;25.65;456;36;3.0;99.7
+7;Hospital Universitario Virgen de las Nieves;Granada;Granada;Andalucia;95.58;730;219;4.8;50.7
+8;Hospital Universitario Clinico San Cecilio;Granada;Granada;Andalucia;454.85;242;214;2.2;62.2
+9;Hospital Universitario Juan Ramon Jimenez;Huelva;Huelva;Andalucia;239.41;145;342;6.3;69.4
+10;Hospital Infanta Elena;Huelva;Huelva;Andalucia;244.08;150;175;3.3;80.1
+11;Hospital Universitario de Jaen;Jaen;Jaen;Andalucia;339.76;842;158;7.0;91.2
+12;Hospital Metropolitano de Jaen;Jaen;Jaen;Andalucia;302.2;54;392;1.9;71.6
+13;Hospital Regional Universitario de Malaga;Malaga;Malaga;Andalucia;121.54;82;444;6.3;91.2
+14;Hospital Universitario Virgen de la Victoria;Malaga;Malaga;Andalucia;347.78;923;333;1.6;67.0
+15;Hospital Universitario Virgen del Rocio;Sevilla;Sevilla;Andalucia;413.7;507;19;6.2;97.9
+16;Hospital Universitario Virgen Macarena;Sevilla;Sevilla;Andalucia;386.07;552;30;3.1;89.2
+17;Hospital de Poniente;El Ejido;Almeria;Andalucia;380.59;349;97;5.8;80.4
+18;Hospital Universitario de Jerez;Jerez de la Frontera;Cadiz;Andalucia;232.89;805;456;9.8;68.7
+19;Hospital de San Carlos;San Fernando;Cadiz;Andalucia;105.75;295;180;2.4;87.8
+20;Hospital de Montilla;Montilla;Cordoba;Andalucia;174.23;930;264;6.5;59.5
+21;Hospital Santa Ana;Motril;Granada;Andalucia;371.46;183;419;5.1;98.3
+22;Hospital de Alta Resolucion de Guadix;Guadix;Granada;Andalucia;216.11;609;398;9.2;97.8
+23;Hospital de Alta Resolucion de la Costa Occidental;Lepe;Huelva;Andalucia;261.85;304;462;9.7;50.4
+24;Hospital San Agustin;Linares;Jaen;Andalucia;39.48;560;457;5.0;89.2
+25;Hospital de Alta Resolucion de Alcaudete;Alcaudete;Jaen;Andalucia;442.64;183;379;2.6;54.7
+26;Hospital Costa del Sol;Marbella;Malaga;Andalucia;248.1;610;178;9.7;51.4
+27;Hospital de Antequera;Antequera;Malaga;Andalucia;220.57;521;81;5.0;89.3
+28;Hospital de la Serrania;Ronda;Malaga;Andalucia;359.0;891;263;5.2;65.1
+29;Hospital de Alta Resolucion de Dos Hermanas;Dos Hermanas;Sevilla;Andalucia;399.87;802;448;7.6;52.1
+30;Hospital de Alta Resolucion de Utrera;Utrera;Sevilla;Andalucia;422.69;481;207;5.2;69.9
+31;Hospital de Alta Resolucion de Lebrija;Lebrija;Sevilla;Andalucia;488.9;891;381;8.5;69.4
+32;Hospital de Jaca;Jaca;Huesca;Aragon;270.76;815;465;8.9;95.7
+33;Hospital Ernest Lluch Martin;Calatayud;Zaragoza;Aragon;67.32;349;285;4.7;84.5
+34;Hospital de Ejea;Ejea de los Caballeros;Zaragoza;Aragon;14.34;717;336;8.4;99.4
+35;Hospital Royo Villanova;Zaragoza;Zaragoza;Aragon;203.83;110;229;6.2;65.2
+36;Hospital San Jorge;Huesca;Huesca;Aragon;400.48;895;459;6.4;92.4
+37;Hospital de Barbastro;Barbastro;Huesca;Aragon;396.82;135;420;5.4;62.0
+38;Hospital Obispo Polanco;Teruel;Teruel;Aragon;116.11;286;126;6.6;73.8
+39;Hospital de Alcañiz;Alcañiz;Teruel;Aragon;253.26;241;231;6.8;95.3
+40;Hospital Universitario Miguel Servet;Zaragoza;Zaragoza;Aragon;306.21;279;468;9.2;52.8
+41;Hospital Clinico Universitario Lozano Blesa;Zaragoza;Zaragoza;Aragon;209.91;834;244;6.0;97.0
+42;Hospital de Cabueñes;Gijon;Asturias;Asturias;100.27;111;123;9.4;91.1
+43;Hospital Universitario Central de Asturias;Oviedo;Asturias;Asturias;238.43;159;161;2.0;96.9
+44;Hospital Monte Naranco;Oviedo;Asturias;Asturias;480.27;897;187;8.4;85.0
+45;Hospital de Jove;Gijon;Asturias;Asturias;310.44;142;461;8.0;89.0
+46;Hospital Universitario San Agustin;Aviles;Asturias;Asturias;282.13;465;129;9.7;70.7
+47;Hospital Valle del Nalon;Langreo;Asturias;Asturias;357.13;206;495;6.8;61.7
+48;Hospital Can Misses;Eivissa;Ibiza;Islas Baleares;271.64;584;102;1.7;64.5
+49;Hospital Universitario Son Espases;Palma;Mallorca;Islas Baleares;232.21;427;498;7.1;69.6
+50;Hospital Son Llatzer;Palma;Mallorca;Islas Baleares;21.84;237;256;7.8;93.9
+51;Hospital Mateu Orfila;Mao;Menorca;Islas Baleares;66.04;849;38;8.2;70.6
+52;Hospital de Manacor;Manacor;Mallorca;Islas Baleares;215.55;789;127;1.3;50.8
+53;Hospital Comarcal de Inca;Inca;Mallorca;Islas Baleares;317.82;622;411;5.1;54.7
+54;Hospital de Formentera;Sant Francesc Xavier;Formentera;Islas Baleares;66.78;439;265;5.9;65.6
+55;Hospital Insular Nuestra Señora de los Reyes;Valverde (El Hierro);Santa Cruz de Tenerife;Islas Canarias;176.2;677;240;5.3;57.2
+56;Hospital Nuestra Señora de Guadalupe;San Sebastian de La Gomera;Santa Cruz de Tenerife;Islas Canarias;128.71;838;403;9.2;55.0
+57;Hospital General de Fuerteventura;Puerto del Rosario (Fuerteventura);Las Palmas;Islas Canarias;25.64;120;415;8.6;78.7
+58;Hospital Doctor Jose Molina Orosa;Arrecife (Lanzarote);Las Palmas;Islas Canarias;364.42;532;14;9.0;86.3
+59;Hospital General de La Palma;Breña Alta (La Palma);Santa Cruz de Tenerife;Islas Canarias;275.42;835;206;5.0;98.1
+60;Hospital Universitario de Gran Canaria Doctor Negrin;Las Palmas de Gran Canaria;Las Palmas;Islas Canarias;104.83;779;290;3.9;95.5
+61;Hospital Universitario Insular de Gran Canaria;Las Palmas de Gran Canaria;Las Palmas;Islas Canarias;30.6;369;403;7.6;60.9
+62;Hospital Universitario de Canarias;San Cristobal de La Laguna;Santa Cruz de Tenerife;Islas Canarias;457.74;418;450;6.9;59.3
+63;Hospital Universitario Nuestra Señora de Candelaria;Santa Cruz de Tenerife;Santa Cruz de Tenerife;Islas Canarias;17.8;290;81;8.0;66.5
+64;Hospital Comarcal de Laredo;Laredo;Cantabria;Cantabria;263.4;907;168;7.2;80.3
+65;Hospital Universitario Marques de Valdecilla;Santander;Cantabria;Cantabria;419.6;530;85;3.9;93.3
+66;Hospital Santa Clotilde;Santander;Cantabria;Cantabria;387.74;733;134;2.6;75.6
+67;Hospital de Sierrallana;Torrelavega;Cantabria;Cantabria;151.59;996;15;4.6;85.5
+68;Complejo Hospitalario Universitario de Albacete;Albacete;Albacete;Castilla-La Mancha;473.5;925;335;4.9;95.6
+69;Hospital General Universitario de Ciudad Real;Ciudad Real;Ciudad Real;Castilla-La Mancha;61.02;459;310;1.6;58.2
+70;Hospital Virgen de la Luz;Cuenca;Cuenca;Castilla-La Mancha;420.27;61;307;9.3;70.9
+71;Hospital Universitario de Guadalajara;Guadalajara;Guadalajara;Castilla-La Mancha;14.86;51;217;5.7;98.5
+72;Hospital Universitario de Toledo;Toledo;Toledo;Castilla-La Mancha;401.29;393;330;8.5;81.3
+73;Hospital Universitario Nuestra Señora del Perpetuo Socorro;Albacete;Albacete;Castilla-La Mancha;440.76;959;408;7.1;58.3
+74;Hospital General de Villarrobledo;Villarobledo;Albacete;Castilla-La Mancha;187.47;52;163;6.2;70.7
+75;Hospital de Puerto Llano;Puerto Llano;Ciudad Real;Castilla-La Mancha;450.0;553;85;2.9;80.7
+76;Hospital General de Tomelloso;Tomelloso;Ciudad Real;Castilla-La Mancha;441.47;493;70;3.2;52.9
+77;Hospital Virgen de la Salud;Toledo;Toledo;Castilla-La Mancha;45.72;297;80;1.2;79.0
+78;Hospital General Nuestra Señora del Prado;Talavera de la Reina;Toledo;Castilla-La Mancha;289.9;715;50;7.2;67.2
+79;Complejo Asistencial de Avila;Avila;Avila;Castilla y Leon;186.93;110;311;5.1;56.4
+80;Hospital Universitario de Burgos;Burgos;Burgos;Castilla y Leon;316.84;652;193;7.2;75.9
+81;Hospital Universitario de Leon;Leon;Leon;Castilla y Leon;121.72;280;176;3.9;63.8
+82;Complejo Asistencial Universitario de Palencia;Palencia;Palencia;Castilla y Leon;217.95;599;189;2.3;55.8
+83;Hospital Universitario de Salamanca;Salamanca;Salamanca;Castilla y Leon;356.92;508;408;5.0;95.3
+84;Complejo Asistencial de Segovia;Segovia;Segovia;Castilla y Leon;206.91;610;188;8.9;76.7
+85;Hospital Santa Barbara;Soria;Soria;Castilla y Leon;14.37;946;346;8.9;59.6
+86;Hospital Clinico Universitario de Valladolid;Valladolid;Valladolid;Castilla y Leon;89.6;237;115;3.4;92.2
+87;Hospital Universitario Rio Hortega;Valladolid;Valladolid;Castilla y Leon;345.77;800;367;5.9;77.9
+88;Complejo Asistencial de Zamora;Zamora;Zamora;Castilla y Leon;204.16;967;126;6.7;92.5
+89;Hospital El Bierzo;Ponferrada;Leon;Castilla y Leon;296.92;239;257;9.3;85.3
+90;Hospital Clinic de Barcelona;Barcelona;Barcelona;Cataluña;120.97;314;240;7.3;93.2
+91;Hospital del Mar;Barcelona;Barcelona;Cataluña;312.25;754;406;4.3;75.1
+92;Hospital Universitario Vall d'Hebron;Barcelona;Barcelona;Cataluña;496.44;279;109;1.1;89.9
+93;Hospital Universitario de Girona Doctor Josep Trueta;Girona;Girona;Cataluña;228.92;67;206;7.1;93.5
+94;Hospital Universitario Arnau de Vilanova;Lleida;Lleida;Cataluña;279.13;973;293;2.3;74.0
+95;Hospital Universitario Joan XXIII;Tarragona;Tarragona;Cataluña;30.24;987;431;6.3;98.3
+96;Hospital de la Santa Creu i Sant Pau;Barcelona;Barcelona;Cataluña;303.46;946;468;5.2;53.1
+97;Hospital Municipal de Badalona;Badalona;Barcelona;Cataluña;176.92;254;304;7.2;91.3
+98;Hospital Universitari de Bellvitge;L'Hospitalet de Llobregat;Barcelona;Cataluña;285.24;869;417;6.1;84.9
+99;Hospital de Figueres;Figueres;Girona;Cataluña;140.26;115;370;6.5;78.7
+100;Hospital d'Olot i Comarcal de la Garrotxa;Olot;Girona;Cataluña;387.58;305;25;1.5;90.3
+101;Hospital Universitari de Santa Maria;Lleida;Lleida;Cataluña;196.73;611;268;3.0;72.6
+102;Hospital Comarcal del Pallars;Tremp;Lleida;Cataluña;171.75;626;280;1.1;79.8
+103;Hospital de Santa Tecla;Tarragona;Tarragona;Cataluña;20.61;568;144;7.0;64.7
+104;Hospital Universitari Sant Joan de Reus;Reus;Tarragona;Cataluña;457.06;368;261;6.4;73.6
+105;Hospital de Tortosa Verge de la Cinta;Tortosa;Tarragona;Cataluña;317.36;919;48;6.4;96.4
+106;Hospital Clinico Universitario de Valencia;Valencia;Valencia;Comunidad Valenciana;61.59;457;139;9.9;65.6
+107;Hospital General Universitario de Valencia;Valencia;Valencia;Comunidad Valenciana;54.61;387;119;8.9;73.3
+108;Hospital Universitario Doctor Peset;Valencia;Valencia;Comunidad Valenciana;337.35;941;311;7.3;90.6
+109;Hospital General de Requena;Requena;Valencia;Comunidad Valenciana;206.26;169;386;3.4;65.9
+110;Hospital Comarcal de Vinaros;Vinaros;Castellon;Comunidad Valenciana;69.47;317;324;6.2;91.9
+111;Hospital Provincial de Castellon;Castellon de la Plana;Castellon;Comunidad Valenciana;327.73;301;459;4.7;84.6
+112;Hospital General Universitario de Elche;Elche;Alicante;Comunidad Valenciana;439.83;967;326;7.8;86.7
+113;Hospital Universitario San Juan de Alicante;Alicante;Alicante;Comunidad Valenciana;221.8;379;76;3.4;73.0
+114;Hospital Marina Baixa;Benidorm;Alicante;Comunidad Valenciana;52.92;691;371;6.2;50.6
+115;Hospital General Universitario de Alicante;Alicante;Alicante;Comunidad Valenciana;280.82;165;263;5.2;94.8
+116;Hospital General Universitario de Castellon;Castellon de la Plana;Castellon;Comunidad Valenciana;406.02;887;201;8.8;55.1
+117;Hospital Universitari i Politecnic La Fe;Valencia;Valencia;Comunidad Valenciana;120.26;886;322;3.3;98.8
+118;Hospital Universitario de Badajoz;Badajoz;Badajoz;Extremadura;185.08;175;145;1.3;97.4
+119;Hospital San Pedro de Alcantara;Caceres;Caceres;Extremadura;216.99;148;116;2.9;96.9
+120;Hospital Perpetuo Socorro;Badajoz;Badajoz;Extremadura;163.3;645;419;7.5;67.9
+121;Hospital Tierra de Barros;Almendralejo;Badajoz;Extremadura;166.54;868;249;5.3;98.4
+122;Hospital de Zafra;Zafra;Badajoz;Extremadura;442.78;624;119;5.4;98.8
+123;Hospital Virgen del Puerto;Plasencia;Caceres;Extremadura;42.92;147;222;7.9;70.9
+124;Hospital Campo Arañuelo;Navalmoral de la Mata;Caceres;Extremadura;118.43;198;438;1.2;66.8
+125;Complejo Hospitalario Universitario de A Coruña;A Coruña;A Coruña;Galicia;149.38;791;269;5.4;84.6
+126;Hospital Universitario Lucus Augusti;Lugo;Lugo;Galicia;356.22;86;496;5.3;56.3
+127;Complejo Hospitalario Universitario de Ourense;Ourense;Ourense;Galicia;387.55;539;166;3.9;71.3
+128;Hospital Provincial de Pontevedra;Pontevedra;Pontevedra;Galicia;476.98;738;396;5.5;69.2
+129;Complexo Hospitalario Universitario de Santiago;Santiago de Compostela;A Coruña;Galicia;202.2;979;379;6.0;86.1
+130;Complexo Hospitalario Universitario de Ferrol;Ferrol;A Coruña;Galicia;482.3;467;214;1.2;83.6
+131;Hospital da Costa;Burela;Lugo;Galicia;133.73;430;49;8.4;69.2
+132;Hospital Comarcal de Valdeorras;O Barco de Valdeorras;Ourense;Galicia;401.53;340;183;8.0;60.8
+133;Hospital Alvaro Cunqueiro;Vigo;Pontevedra;Galicia;200.9;646;330;8.1;84.2
+134;Hospital Meixoeiro;Vigo;Pontevedra;Galicia;141.81;296;317;6.2;67.8
+135;Hospital do Salnes;Vilagarcia de Arousa;Pontevedra;Galicia;95.64;852;224;6.3;83.1
+136;Hospital Universitario Principe de Asturias;Alcala de Henares;Madrid;Comunidad de Madrid;290.69;719;283;4.9;78.3
+137;Hospital General Universitario Gregorio Marañon;Madrid;Madrid;Comunidad de Madrid;487.71;112;83;8.8;64.9
+138;Hospital Universitario 12 de Octubre;Madrid;Madrid;Comunidad de Madrid;147.13;248;443;1.2;56.0
+139;Hospital Universitario de Mostoles;Mostoles;Madrid;Comunidad de Madrid;69.8;690;366;2.7;96.3
+140;Hospital Universitario La Paz;Madrid;Madrid;Comunidad de Madrid;237.29;60;170;1.5;83.7
+141;Hospital Universitario Ramon y Cajal;Madrid;Madrid;Comunidad de Madrid;379.85;853;265;1.5;92.9
+142;Hospital Universitario de La Princesa;Madrid;Madrid;Comunidad de Madrid;160.33;569;432;9.3;53.7
+143;Hospital Universitario Infanta Leonor;Madrid;Madrid;Comunidad de Madrid;133.53;825;178;1.1;54.2
+144;Hospital Universitario Fundacion Alcorcon;Alcorcon;Madrid;Comunidad de Madrid;77.13;333;406;7.6;75.9
+145;Hospital General Universitario Santa Lucia;Cartagena;Murcia;Region de Murcia;43.69;91;144;2.3;64.5
+146;Hospital Clinico Universitario Virgen de la Arrixaca;Murcia;Murcia;Region de Murcia;271.04;726;428;9.4;85.1
+147;Hospital General Universitario Reina Sofia;Murcia;Murcia;Region de Murcia;213.38;965;500;1.9;96.2
+148;Hospital General Universitario Morales Meseguer;Murcia;Murcia;Region de Murcia;30.49;753;459;3.0;85.1
+149;Hospital General Universitario Santa Maria del Rosell;Cartagena;Murcia;Region de Murcia;450.49;475;395;8.6;85.2
+150;Hospital General Universitario Rafael Mendez;Lorca;Murcia;Region de Murcia;392.72;780;137;4.0;72.6
+151;Hospital Reina Sofia de Tudela;Tudela;Navarra;Navarra;110.68;536;214;7.3;70.4
+152;Hospital Garcia Orcoyen;Estella-Lizarra;Navarra;Navarra;353.82;784;164;6.8;69.8
+153;Hospital San Juan de Dios de Pamplona;Pamplona;Navarra;Navarra;402.53;847;153;9.0;84.6
+154;Complejo Hospitalario de Navarra;Pamplona;Navarra;Navarra;142.34;450;457;8.0;74.4
+155;Hospital Universitario Araba;Vitoria-Gasteiz;Alava;Pais Vasco;63.17;959;233;1.6;65.5
+156;Hospital de Leza;Leza;Alava;Pais Vasco;120.0;930;484;7.5;74.3
+157;Hospital Universitario Donostia;San Sebastian;Guipuzcoa;Pais Vasco;289.04;143;41;5.4;94.1
+158;Hospital Bidasoa;Irun;Guipuzcoa;Pais Vasco;370.88;529;146;7.3;71.2
+159;Hospital de Zumarraga;Zumarraga;Guipuzcoa;Pais Vasco;138.59;883;450;6.2;77.3
+160;Hospital de Eibar;Eibar;Guipuzcoa;Pais Vasco;284.79;322;345;3.0;53.8
+161;Hospital de Mendaro;Mendaro;Guipuzcoa;Pais Vasco;159.84;937;488;6.5;79.2
+162;Hospital Universitario Basurto;Bilbao;Vizcaya;Pais Vasco;48.01;636;408;9.3;82.6
+163;Hospital de Santa Marina;Bilbao;Vizcaya;Pais Vasco;204.24;936;149;8.7;85.9
+164;Hospital Universitario de Cruces;Barakaldo;Vizcaya;Pais Vasco;374.73;281;293;4.9;51.7
+165;Hospital San Eloy;Barakaldo;Vizcaya;Pais Vasco;235.28;133;409;7.7;94.2
+166;Hospital San Pedro;Logroño;La Rioja;La Rioja;457.88;944;104;3.4;89.4
+167;Hospital Universitario de Ceuta;Ceuta;Ceuta;Ceuta;263.46;208;276;6.3;88.5
+168;Hospital Comarcal de Melilla;Melilla;Melilla;Melilla;384.25;652;127;6.5;88.4
+169;Fundacion Hospital Calahorra;Calahorra;La Rioja;La Rioja;54.92;126;182;2.3;54.8
+170;Hospital General de La Rioja;Logroño;La Rioja;La Rioja;83.1;517;112;3.6;65.5
