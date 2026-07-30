@@ -25,6 +25,10 @@ where b.dias_retraso > 0
 group by a.titulo
 order by 2 desc, 3 desc;
 
+select count(prestamo_id), avg(dias_retraso)
+from prestamos
+where libro_id = 302;
+
 -- 4.Mostra la quantitat d'usuaris que no han realitzat cap préstec.
 select count(a.usuario_id) as 'quantitat usuarios sense préstec'
 from usuarios as a
@@ -53,6 +57,7 @@ where a.nacionalidad = 'extranjera'
 and importe > 10
 and pagada = 1
 group by a.usuario_id;
+
 
 -- 7.Mostra l'autor nascut després de 1980 que ha generat més préstecs en usuaris espanyols. A més, només s'han de comptabilitzar els préstecs finalitzats (ok o amb retard).
 select a.nombre, count(c.prestamo_id) as 'número de prestamos'
