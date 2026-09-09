@@ -125,6 +125,9 @@ LIMIT 10;
 --- Estudials i dissenya una base de dades amb un esquema destrella que contingui, almenys 4 taules de les quals puguis realitzar les següents consultes:
 --- La taula de products.csv lutilitzarem més endavant.
 -------------------------------------------------
+--- USAR OTRO ESQUEMA
+CREATE SCHEMA IF NOT EXISTS business_analitycs;
+USE business_analitycs;
 --- Modificar la conexión para poder cargar datos csv (subida bloqueada)
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
 SET GLOBAL local_infile = ON;
@@ -186,6 +189,27 @@ IGNORE 1 ROWS;
 SELECT *
 FROM european_users;
 
+DROP TABLE IF EXISTS users;
+CREATE TABLE IF NOT EXISTS users AS 
+SELECT * FROM american_users
+UNION
+SELECT * FROM european_users;
+
+DROP TABLE IF EXISTS american_users;
+DROP TABLE IF EXISTS european_users;
+
+
+SET SQL_SAFE_UPDATES = 0; --- quitar la protección para modificar el campo expiring_date a formato fecha
+UPDATE users
+SET birth_date = DATE_FORMAT(
+    STR_TO_DATE(birth_date, '%b %d, %Y'),
+    '%Y-%m-%d')
+WHERE id IS NOT NULL;
+
+ALTER TABLE users
+MODIFY COLUMN birth_date DATE;
+SET FOREIGN_KEY_CHECKS = 1;
+
 --- companies
 DROP TABLE IF EXISTS companies;
 CREATE TABLE IF NOT EXISTS companies (
@@ -219,7 +243,7 @@ pin INT,
 cvv INT,
 track1 VARCHAR(100),
 track2 VARCHAR(100),
-expiring_date DATE,
+expiring_date VARCHAR(25),
 card_type VARCHAR(25),
 card_renewal_flag BOOLEAN);
 
@@ -230,6 +254,15 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 IGNORE 1 ROWS;
 
+SET SQL_SAFE_UPDATES = 0; --- quitar la protección para modificar el campo expiring_date a formato fecha
+UPDATE credit_cards
+SET expiring_date = STR_TO_DATE(expiring_date, '%m/%d/%y')
+WHERE id IS NOT NULL;
+
+ALTER TABLE credit_cards
+MODIFY COLUMN expiring_date DATE;
+SET FOREIGN_KEY_CHECKS = 1;
+
 SELECT *
 FROM credit_cards;
 
@@ -238,7 +271,7 @@ DROP TABLE IF EXISTS transactions;
 CREATE TABLE IF NOT EXISTS transactions (
 id VARCHAR(255),
 card_id VARCHAR(8),
-business_id VARCHAR(6),
+company_id VARCHAR(6),
 timestamp TIMESTAMP,
 amount DECIMAL(10, 2),
 declined BOOLEAN,
@@ -268,13 +301,33 @@ FROM transactions;
 
 --- Relacion de tablas
 --- PK:
-ALTER TABLE american_users ADD CONSTRAINT pk_american_users_id PRIMARY KEY (id);
-ALTER TABLE european_users ADD CONSTRAINT pk_european_users_id PRIMARY KEY (id);
-ALTER TABLE companies ADD CONSTRAINT pk_companies_id PRIMARY KEY (company_id);
+ALTER TABLE users ADD CONSTRAINT pk_users_id PRIMARY KEY (id);
+ALTER TABLE companies ADD CONSTRAINT pk_companies_id PRIMARY KEY (company_id); --- ERROR
 ALTER TABLE credit_cards ADD CONSTRAINT pk_credit_cards_id PRIMARY KEY (id);
 ALTER TABLE transactions ADD CONSTRAINT pk_transactions_id PRIMARY KEY (id);
 
 --- FK:
+ALTER TABLE transactions ADD CONSTRAINT fk_transactions_cardid FOREIGN KEY (card_id) REFERENCES credit_cards(id);
+ALTER TABLE transactions ADD CONSTRAINT fk_transactions_userid FOREIGN KEY (user_id) REFERENCES users(id);
+ALTER TABLE transactions ADD CONSTRAINT fk_transactions_companyid FOREIGN KEY (company_id) REFERENCES companies(company_id);
+
+-------------------------------------------------
+--- EJERCICIOS 9
+--- Realitza una subconsulta que mostri tots els usuaris amb més de 80 transaccions utilitzant almenys 2 taules.
+-------------------------------------------------
+SELECT u.*, subq.n_transactions
+FROM users as u
+INNER JOIN
+	(SELECT user_id, count(id) as 'n_transactions'
+	FROM transactions
+	GROUP BY user_id) as subq
+ON u.id = subq.user_id
+WHERE subq.n_transactions > 80; 
+-------------------------------------------------
+--- EJERCICIOS 10
+--- Mostra la mitjana d amount per IBAN de les targetes de crèdit a la companyia Donec Ltd, utilitza almenys 2 taules.
+-------------------------------------------------
+
 
 
 
