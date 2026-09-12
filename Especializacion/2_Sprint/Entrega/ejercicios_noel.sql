@@ -1,4 +1,6 @@
---- Utilitzant JOIN realitzaràs les següents consultes:
+------------------------------------------------
+--- NIVEL 1
+------------------------------------------------
 USE transactions;
 
 -------------------------------------------------
@@ -327,13 +329,207 @@ WHERE subq.n_transactions > 80;
 --- EJERCICIOS 10
 --- Mostra la mitjana d amount per IBAN de les targetes de crèdit a la companyia Donec Ltd, utilitza almenys 2 taules.
 -------------------------------------------------
+SELECT cc.iban, avg(t.amount) as 'media_amount', count(t.id) as 'n_transactions', c.company_name
+FROM credit_cards as cc
+JOIN transactions as t
+ON cc.id = t.card_id
+JOIN companies as c
+ON t.company_id = c.company_id
+WHERE c.company_name = 'Donec Ltd'
+GROUP BY cc.iban;
 
 
+------------------------------------------------
+--- NIVEL 2
+------------------------------------------------
+-------------------------------------------------
+--- EJERCICIOS 1
+--- Identifica els cinc dies que es va generar la quantitat més gran d ingressos a l empresa per vendes. 
+--- Mostra la data de cada transacció juntament amb el total de les vendes.
+-------------------------------------------------
+--- Hay que cambiar el formato de la columna timestamp de la tabla transactions para quitar la hora (solo nos interesa la fecha exacta). 
+--- He optado por crear una columna fecha y otra hora para no perder información y poder filtrar mejor.
+ALTER TABLE transactions ADD COLUMN fecha date;
+UPDATE transactions
+SET fecha = DATE(timestamp);
+ALTER TABLE transactions ADD COLUMN hora time;
+UPDATE transactions
+SET hora = TIME(timestamp);
+ALTER TABLE transactions DROP COLUMN timestamp;
 
+--- También tener en cuenta el descuento (discount_amount). Las tasas (tax_amount) no se tendrían en cuenta al ser un impuesto que no se queda la empresa, sino el estado.
+SELECT c.company_name, sub1.fecha, sub1.total_amount, sub1.puesto
+FROM companies as c
+JOIN
+	(SELECT t.fecha, (sum(t.amount)-sum(t.discount_amount)) as 'total_amount', c.company_id,
+	ROW_NUMBER() OVER (PARTITION BY c.company_name ORDER BY (sum(t.amount)-sum(t.discount_amount)) DESC) AS puesto
+	FROM transactions as t
+	JOIN companies as c
+	ON t.company_id = c.company_id
+	GROUP BY t.fecha,c.company_id
+	ORDER BY c.company_id, puesto) as sub1
+ON c.company_id = sub1.company_id
+WHERE puesto <= 5
+ORDER BY c.company_name, sub1.puesto;
 
+-------------------------------------------------
+--- EJERCICIO 2
+--- Presenta el nom, telèfon, país, data i amount, d aquelles empreses que van realitzar transaccions amb un valor comprès entre 350 i 400 euros
+--- i en alguna daquestes dates: 29 d abril del 2015, 20 de juliol del 2018 i 13 de març del 2024. 
+--- Ordena els resultats de major a menor quantitat.
+-------------------------------------------------
+SELECT c.company_name, c.phone, c.country, t.fecha, t.amount
+FROM companies as c
+JOIN transactions as t
+ON c.company_id = t.company_id
+WHERE t.fecha IN ('2015-04-29', '2018-07-20', '2024-03-13')
+ORDER BY t.amount DESC;
 
+-------------------------------------------------
+--- EJERCICIO 3
+--- Necessitem optimitzar l assignació dels recursos i dependrà de la capacitat operativa que es requereixi, 
+--- per la qual cosa et demanen la informació sobre la quantitat de transaccions que realitzen les empreses, 
+--- però el departament de recursos humans és exigent i vol un llistat de les empreses on especifiquis si 
+--- tenen igual o més de 400 transaccions o menys.
+-------------------------------------------------
+SELECT c.company_name,
+CASE
+	WHEN count(t.id) >= 400 THEN 'Igual o más de 400 transacciones'
+    ELSE 'Menos de 400'
+END as 'total_transactions'
+FROM companies as c
+JOIN transactions as t
+ON c.company_id = t.company_id
+GROUP BY c.company_name
+ORDER BY c.company_name;
 
+-------------------------------------------------
+--- EJERCICIO 4
+--- Elimina de la taula transaction el registre amb ID 000447FE-B650-4DCF-85DE-C7ED0EE1CAAD de la base de dades.
+-------------------------------------------------
+--- Compruebo cuantos valores tiene la tabla transactions (10000) antes del borrado para comprobar que se ha borrado correctamente. Después del borrado hay 9999.
+SELECT count(*)
+FROM transactions;
+DELETE FROM transactions
+WHERE id = '000447FE-B650-4DCF-85DE-C7ED0EE1CAAD';
 
+-------------------------------------------------
+--- EJERCICIO 5
+--- La secció de màrqueting desitja tenir accés a informació específica per a realitzar anàlisi i estratègies efectives. 
+--- Sha sol·licitat crear una vista que proporcioni detalls clau sobre les companyies i les seves transaccions. 
+--- Serà necessària que creïs una vista anomenada VistaMarketing que contingui la següent informació: 
+--- Nom de la companyia. Telèfon de contacte. País de residència. Mitjana de compra realitzat per cada companyia. 
+--- Presenta la vista creada, ordenant les dades de major a menor mitjana de compra.
+-------------------------------------------------
 
+CREATE VIEW VistaMarketing AS
+SELECT c.company_name, c.phone, c.country, avg(t.amount) as 'media_amount'
+FROM companies as c
+JOIN transactions as t
+ON c.company_id = t.company_id
+GROUP BY 1, 2, 3
+ORDER BY 4 DESC;
 
+-------------------------------------------------
+--- NIVEL 3
+-------------------------------------------------
+-------------------------------------------------
+--- EJERCICIO 1
+--- Crea una nova taula que reflecteixi l estat de les targetes de crèdit basat en si les tres últimes transaccions 
+--- han estat declinades aleshores és inactiu, si almenys una no és rebutjada aleshores és actiu. 
+--- Partint d’aquesta taula respon:
+--- Quantes targetes estan actives?
+-------------------------------------------------
+--- Proceso en 3 pasos diferentes. 
+--- 1 Obtener orden de transacciones por tarjeta; 2 Eliminar todo menos los 3 ultimos movimientos; 3 Asignar el campo según esten activas o inactivas
+DROP TABLE IF EXISTS credit_cards_stat;
+CREATE TABLE credit_cards_stat2
+SELECT t.card_id, t.fecha, t.declined,
+ROW_NUMBER() OVER (PARTITION BY card_id ORDER BY fecha DESC) AS puesto
+FROM transactions as t
+JOIN companies as c
+ON t.company_id = c.company_id;
 
+DELETE FROM credit_cards_stat2
+WHERE puesto > 3;
+
+CREATE TABLE credit_cards_stat
+SELECT card_id,
+CASE
+	WHEN sum(declined)=3 THEN 'Inactiva'
+	ELSE 'Activa'
+END as stat
+FROM credit_cards_stat2
+GROUP BY card_id
+ORDER BY card_id;
+
+DROP TABLE IF EXISTS credit_cards_stat2;
+
+--- Quantes targetes estan actives? 5000 No hay Inactivas 
+SELECT count(card_id)
+FROM credit_cards_stat
+WHERE stat = 'Activa';
+
+--- Proceso creado en 1 paso con subqueries
+CREATE TABLE IF NOT EXISTS credit_card_stat
+SELECT card_id,
+CASE
+	WHEN sum(declined)=3 THEN 'Inactiva'
+	ELSE 'Activa'
+END as stat
+FROM 
+	(SELECT t.card_id, t.fecha, t.declined,
+	ROW_NUMBER() OVER (PARTITION BY card_id ORDER BY fecha DESC) AS puesto
+	FROM transactions as t
+	JOIN companies as c
+	ON t.company_id = c.company_id) as sub1
+WHERE puesto < 3
+GROUP BY card_id
+ORDER BY card_id;
+
+--- Quantes targetes estan actives? 5000 No hay Inactivas 
+SELECT count(card_id)
+FROM credit_cards_stat
+WHERE stat = 'Activa';
+
+-------------------------------------------------
+-- EJERCICIO 2
+-- Crea una taula amb la qual puguem unir les dades de larxiu de products.csv amb la base de dades creada 
+-- (ja que fins ara no podíem fer-ho), tenint en compte que des de transaction tens product_ids. 
+-- Genera la següent consulta:
+-- Necessitem conèixer el nombre de vegades que sha venut cada producte.
+-------------------------------------------------
+-- transactions
+DROP TABLE IF EXISTS productos;
+CREATE TABLE IF NOT EXISTS productos (
+id INT,
+product_name VARCHAR(50),
+price VARCHAR(15),
+colour VARCHAR(15),
+weight DECIMAL(10,1),
+warehouse_id VARCHAR(8),
+category VARCHAR(15),
+brand VARCHAR(15),
+cost VARCHAR(15),
+launch_date DATE);
+
+LOAD DATA LOCAL
+INFILE "C:/Users/noel_/Documents/GitHub/IT_Data/Especializacion/2_Sprint/N1-Ex.8__products.csv"
+INTO TABLE productos
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+IGNORE 1 ROWS;
+
+CREATE TABLE IF NOT EXISTS product_transaction
+SELECT t.id as transaction_id, p.id as product_id, t.product_ids as transactions_products_ids, t.fecha
+from productos as p
+JOIN transactions as t
+ON FIND_IN_SET(p.id, REPLACE(t.product_ids, ' ', '')) -- product_ids es un conjunto de ids por lo que no vale el p.id in t.product_ids
+WHERE p.id = 52
+ORDER BY product_ids, p.id;
+
+--- SOLUCION FINAL
+SELECT distinct(product_id) as product_id, count(product_id) as 'n_ventas'
+FROM product_transaction
+GROUP BY product_id
+ORDER BY 2 DESC
