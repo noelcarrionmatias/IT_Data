@@ -11,7 +11,7 @@ USE transactions;
 SELECT distinct(c.country) as "paises_vendas"
 FROM company as c
 JOIN transaction as t on c.id = t.company_id
-WHERE t.amount > 0
+WHERE t.declined <> 0
 GROUP BY c.country
 ORDER BY c.country;
 
@@ -19,16 +19,17 @@ ORDER BY c.country;
 SELECT count(distinct(c.country)) as "n_paises"
 FROM company as c
 JOIN transaction as t on c.id = t.company_id
-WHERE t.amount > 0
+WHERE t.declined <> 0
 ORDER BY c.country;
 
 --- Identifica la companyia amb la mitjana més gran de vendes.
-SELECT c.company_name, avg(amount) as "media_ventas"
+SELECT c.company_name, round(avg(amount),2) as "media_ventas"
 FROM company as c
 JOIN transaction as t on c.id = t.company_id
 WHERE t.amount > 0
 GROUP BY c.company_name
-ORDER BY media_ventas desc;
+ORDER BY media_ventas desc
+LIMIT 1;
 
 -------------------------------------------------
 --- EJERCICIOS 3
@@ -54,10 +55,12 @@ and t.amount >
 	FROM transaction as t);
     
 --- Eliminaran del sistema les empreses que no tenen transaccions registrades, entrega el llistat daquestes empreses.
-SELECT distinct(c.company_name), c.id
-FROM company as c,
-transaction as t
-WHERE c.id <> t.company_id;
+SELECT c.id, c.company_name
+FROM company as c
+WHERE c.id NOT IN (
+	SELECT t.company_id
+    FROM transaction as t
+    WHERE c.id = t.company_id);
 
 -------------------------------------------------
 --- EJERCICIOS 4
@@ -90,6 +93,21 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ALTER TABLE transaction ADD CONSTRAINT transaction_idfk FOREIGN KEY (credit_card_id) REFERENCES credit_card(id);
 
+-------------------------------------------------
+--- Exercici 5
+--- El departament de Recursos Humans ha identificat un error en el número de compte associat a la targeta de crèdit amb ID CcU-2938. 
+--- La informació que ha de mostrar-se per a aquest registre és: TR323456312213576817699999. 
+--- Recorda mostrar que el canvi es va realitzar.
+-------------------------------------------------
+SELECT *
+FROM credit_card
+WHERE id = 'CcU-2938';
+UPDATE credit_card
+SET iban = 'TR323456312213576817699999'
+WHERE id = 'CcU-2938';
+SELECT *
+FROM credit_card
+WHERE id = 'CcU-2938';
 -------------------------------------------------
 --- EJERCICIOS 6
 --- En la taula transaction ingressa una nova transacció amb la següent informació:
@@ -133,7 +151,7 @@ USE business_analitycs;
 --- Modificar la conexión para poder cargar datos csv (subida bloqueada)
 SHOW GLOBAL VARIABLES LIKE 'local_infile';
 SET GLOBAL local_infile = ON;
-
+SET SQL_SAFE_UPDATES = 0;
 --- Crear las tablas:
 DROP TABLE IF EXISTS american_users;
 CREATE TABLE IF NOT EXISTS american_users (
@@ -149,7 +167,8 @@ postal_code VARCHAR(25),
 address VARCHAR(50),
 signup_date DATE,
 user_segment VARCHAR(50),
-income_band VARCHAR(25));
+income_band VARCHAR(25),
+region VARCHAR(10));
 
 --- Cargar la primera tabla (americans_user.csv):
 LOAD DATA LOCAL
@@ -158,6 +177,7 @@ INTO TABLE american_users
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 IGNORE 1 ROWS;
+UPDATE american_users SET region = "America";
 
 --- Comprobación
 SELECT *
@@ -179,7 +199,9 @@ postal_code VARCHAR(25),
 address VARCHAR(50),
 signup_date DATE,
 user_segment VARCHAR(50),
-income_band VARCHAR(25));
+income_band VARCHAR(25),
+region VARCHAR(10));
+
 
 LOAD DATA LOCAL
 INFILE "C:/Users/noel_/Documents/GitHub/IT_Data/Especializacion/2_Sprint/N1-Ex.8__european_users.csv"
@@ -187,6 +209,7 @@ INTO TABLE european_users
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 IGNORE 1 ROWS;
+UPDATE european_users SET region = "Europa";
 
 SELECT *
 FROM european_users;
@@ -325,6 +348,7 @@ INNER JOIN
 	GROUP BY user_id) as subq
 ON u.id = subq.user_id
 WHERE subq.n_transactions > 80; 
+
 -------------------------------------------------
 --- EJERCICIOS 10
 --- Mostra la mitjana d amount per IBAN de les targetes de crèdit a la companyia Donec Ltd, utilitza almenys 2 taules.
@@ -349,6 +373,7 @@ GROUP BY cc.iban;
 -------------------------------------------------
 --- Hay que cambiar el formato de la columna timestamp de la tabla transactions para quitar la hora (solo nos interesa la fecha exacta). 
 --- He optado por crear una columna fecha y otra hora para no perder información y poder filtrar mejor.
+SET SQL_SAFE_UPDATES = 0;
 ALTER TABLE transactions ADD COLUMN fecha date;
 UPDATE transactions
 SET fecha = DATE(timestamp);
@@ -356,8 +381,11 @@ ALTER TABLE transactions ADD COLUMN hora time;
 UPDATE transactions
 SET hora = TIME(timestamp);
 ALTER TABLE transactions DROP COLUMN timestamp;
+ALTER TABLE transactions DROP COLUMN fecha;
 
---- También tener en cuenta el descuento (discount_amount). Las tasas (tax_amount) no se tendrían en cuenta al ser un impuesto que no se queda la empresa, sino el estado.
+--- También tener en cuenta el descuento (discount_amount). 
+--- Las tasas (tax_amount) no se tendrían en cuenta al ser un impuesto que no se queda la empresa, sino el estado.
+--- No se han tenido en cuenta las transacciones que se han declinado.
 SELECT c.company_name, sub1.fecha, sub1.total_amount, sub1.puesto
 FROM companies as c
 JOIN
@@ -366,6 +394,7 @@ JOIN
 	FROM transactions as t
 	JOIN companies as c
 	ON t.company_id = c.company_id
+    WHERE t.declined <> 1
 	GROUP BY t.fecha,c.company_id
 	ORDER BY c.company_id, puesto) as sub1
 ON c.company_id = sub1.company_id
@@ -440,37 +469,6 @@ ORDER BY 4 DESC;
 --- Partint d’aquesta taula respon:
 --- Quantes targetes estan actives?
 -------------------------------------------------
---- Proceso en 3 pasos diferentes. 
---- 1 Obtener orden de transacciones por tarjeta; 2 Eliminar todo menos los 3 ultimos movimientos; 3 Asignar el campo según esten activas o inactivas
-DROP TABLE IF EXISTS credit_cards_stat;
-CREATE TABLE credit_cards_stat2
-SELECT t.card_id, t.fecha, t.declined,
-ROW_NUMBER() OVER (PARTITION BY card_id ORDER BY fecha DESC) AS puesto
-FROM transactions as t
-JOIN companies as c
-ON t.company_id = c.company_id;
-
-DELETE FROM credit_cards_stat2
-WHERE puesto > 3;
-
-CREATE TABLE credit_cards_stat
-SELECT card_id,
-CASE
-	WHEN sum(declined)=3 THEN 'Inactiva'
-	ELSE 'Activa'
-END as stat
-FROM credit_cards_stat2
-GROUP BY card_id
-ORDER BY card_id;
-
-DROP TABLE IF EXISTS credit_cards_stat2;
-
---- Quantes targetes estan actives? 5000 No hay Inactivas 
-SELECT count(card_id)
-FROM credit_cards_stat
-WHERE stat = 'Activa';
-
---- Proceso creado en 1 paso con subqueries
 CREATE TABLE IF NOT EXISTS credit_card_stat
 SELECT card_id,
 CASE
@@ -520,12 +518,12 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 IGNORE 1 ROWS;
 
+DROP TABLE IF EXISTS product_transaction;
 CREATE TABLE IF NOT EXISTS product_transaction
 SELECT t.id as transaction_id, p.id as product_id, t.product_ids as transactions_products_ids, t.fecha
 from productos as p
 JOIN transactions as t
 ON FIND_IN_SET(p.id, REPLACE(t.product_ids, ' ', '')) -- product_ids es un conjunto de ids por lo que no vale el p.id in t.product_ids
-WHERE p.id = 52
 ORDER BY product_ids, p.id;
 
 --- SOLUCION FINAL

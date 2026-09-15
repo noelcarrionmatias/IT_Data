@@ -1,0 +1,7 @@
+- Revisar los OUTPUT de los ejercicios en SQL
+- Revisar ejercicio 2, 3 nv1 declined = 0
+- Redondeo a 2 dígitos en el 2.3 nv1
+- ejercicio 3 nº resultados 13269
+- corregir Eliminaran del sistema les empreses que no tenen transaccions registrades, entrega el llistat d'aquestes empreses. NO HE HECHO SUBCONSULTA. Resultado 0
+- Hacer el ejercicio 5 del nv1
+- Añadir campo "región" a las tablas european_users y american_users para facilitar el filtrado en users
