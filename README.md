@@ -19,4 +19,4 @@ Introducción a BigQuery: Separación de almacenamiento, arquitectura, creación
 BigQuery avanzado: Arquitectura y optimización de costes, SQL analítico avanzado (funciones de ventana), automatización, vistas materializadas, conexión y visualización con DataStudio.
 
 ### Sprint 5:
-En proceso...
+Bases de datos no relacionales en MongoDB: diferencias entre BBDD relacionales y no relacionales, tipos de datos y operaciones CRUD básicas. 
