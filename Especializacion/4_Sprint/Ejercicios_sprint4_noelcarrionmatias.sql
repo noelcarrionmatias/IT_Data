@@ -76,29 +76,34 @@ ORDER BY v.gasto_total DESC;
 
 # EJERCICIO 2: Analisis de Tendencias (Windows Functions sobre Vistas)
 
+WITH list_ingresos AS (
+  SELECT
+  fecha,
+  total_ingresos as ventas_hoy,
+  LAG(total_ingresos) OVER (ORDER BY fecha) as ventas_ayer
+  FROM sprint3_gold.mv_daily_sales
+)
 
 SELECT 
-mv.fecha,
-mv.total_ingresos as ventas_hoy,
-LAG(mv.total_ingresos) OVER (ORDER BY mv.fecha) as ventas_ayer,
-ROUND((SAFE_DIVIDE(
-  mv.total_ingresos - LAG(mv.total_ingresos, 1) OVER (ORDER BY mv.fecha), 
-  ((mv.total_ingresos + LAG(mv.total_ingresos) OVER (ORDER BY mv.fecha))/2)
-) * 100),2) AS diferencia_porcentual
-FROM `sprint3_gold.mv_daily_sales` as mv
+fecha,
+round(ventas_hoy,2) as ventas_hoy,
+round(ventas_ayer,2) as ventas_ayer,
+ROUND(SAFE_DIVIDE(ventas_hoy - ventas_ayer,ventas_ayer)*100,2) AS diferencia_porcentual
+FROM list_ingresos
 ORDER BY fecha ASC;
 
 # EJERCICIO 3: Totales acumulados (Running totales sobre vistas)
 
 SELECT
 fecha,
-total_ingresos,
+round(total_ingresos,2) as total_ingresos,
 ROUND(SUM(total_ingresos) OVER (
   PARTITION BY EXTRACT(YEAR FROM fecha) 
   ORDER BY fecha ASC
   ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
 ), 2) AS acumulado_anual
-FROM `sprint3_gold.mv_daily_sales`;
+FROM `sprint3_gold.mv_daily_sales`
+ORDER BY fecha;
 
 # EJERCICIO 4: Fidelización y valor del cliente (Filtrado avanzado)
 
@@ -127,7 +132,7 @@ WITH selection AS (
 SELECT s.transaction_id, s.timestamp, s.amount as total_ticket, product_id, p.name, p.price as product_price
 FROM selection as s
 CROSS JOIN UNNEST(s.array_product_ids) AS product_id
-JOIN sprint3_silver.products_clean as p
+LEFT JOIN sprint3_silver.products_clean as p
 ON product_id = p.products_id
 ORDER By s.transaction_id;
 
@@ -141,8 +146,8 @@ LIMIT 5;
 
 # EJERCICIO 3: Automatización del Pipeline y Visualización
 
-CREATE OR REPLACE FUNCTION sprint3_gold.calculate_tax(amount FLOAT64)
-RETURNS FLOAT64 AS (amount * 1.21);
+CREATE OR REPLACE FUNCTION sprint3_gold.calculate_tax(amount FLOAT64, tax FLOAT64)
+RETURNS FLOAT64 AS (round((amount * tax),2));
 
 CREATE OR REPLACE TABLE sprint3_gold.dim_transactions_flat AS (
 WITH selection AS (
@@ -150,7 +155,7 @@ WITH selection AS (
   FROM sprint3_silver.transaction_clean
 )
 
-SELECT s.transaction_id, s.timestamp, s.amount as total_ticket, product_id, p.name, p.price as product_price, sprint3_gold.calculate_tax(p.price) as product_price_tax_inc
+SELECT s.transaction_id, s.timestamp, s.amount as total_ticket, product_id, p.name, p.price as product_price, round(p.price+sprint3_gold.calculate_tax(p.price,0.21),2) as product_price_tax_inc
 FROM selection as s
 CROSS JOIN UNNEST(s.array_product_ids) AS product_id
 JOIN sprint3_silver.products_clean as p
