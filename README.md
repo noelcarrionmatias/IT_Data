@@ -20,3 +20,6 @@ BigQuery avanzado: Arquitectura y optimización de costes, SQL analítico avanza
 
 ### Sprint 5:
 Bases de datos no relacionales en MongoDB: diferencias entre BBDD SQL y NoSQL, tipos de datos y operaciones CRUD básicas. 
+
+### Sprint 6:
+Fundamentos de la estadística descriptiva: estadísticas de centralidad, dispersión, visualización específicas, rellaciones, regresión lineal y estadística inferencial y tests estadísticos.
