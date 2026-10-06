@@ -2,7 +2,15 @@
 Tareas realizadas durante el Bootcamp Data Analytics impartido por Barcelona Activa con colaboración de la UPC (Universitat Politècnica de Barcelona). Consta de un bloque de fundamentos, para aprender la importancia y conceptos claves del análisis de datos. El segundo bloque de especialización está formado por "sprints", donde cada uno se especializa en un apartado del análisis de datos.
 
 ## Fundamentos:
-Introducción a SQL, modelado de datos, visualización con Power BI e introducción a Python.
+### SQL:
+Consultas básicas y avanzadas, creación de datasets, tablas y modificación de datos. Tipos de relación y modelado.
+
+### Power BI:
+Conceptos de visualización con Power BI.
+
+### Python:
+Tipos de datos en Python, listas, funciones, diccionarios.
+Libreria Pandas (manejo de DataFrames, filtrado...)
 
 ## Especialización:
 
