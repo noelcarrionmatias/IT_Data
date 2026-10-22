@@ -37,3 +37,13 @@ Nociones y conocimientos en Python: dominar el funcionamiento de listas, diccion
 
 ### Sprint 8:
 Analítica de datos en Python: DataFrames, modificar, transformar, ETL y analíticas con librería Pandas.
+
+### Sprint 9: (pendiente)
+
+### Sprint 10: (pendiente)
+
+### Sprint 11: (pendiente)
+
+### Sprint 12: (pendiente)
+
+## Proyecto: (pendiente)
