@@ -31,3 +31,9 @@ Bases de datos no relacionales en MongoDB: diferencias entre BBDD SQL y NoSQL, t
 
 ### Sprint 6:
 Fundamentos de la estadística descriptiva: estadísticas de centralidad, dispersión, visualización específicas, rellaciones, regresión lineal y estadística inferencial y tests estadísticos.
+
+### Sprint 7:
+Nociones y conocimientos en Python: dominar el funcionamiento de listas, diccionarios, bucles y crear funciones.
+
+### Sprint 8:
+Analítica de datos en Python: DataFrames, modificar, transformar, ETL y analíticas con librería Pandas.
