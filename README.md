@@ -36,9 +36,10 @@ Fundamentos de la estadística descriptiva: estadísticas de centralidad, disper
 Nociones y conocimientos en Python: dominar el funcionamiento de listas, diccionarios, bucles y crear funciones.
 
 ### Sprint 8:
-Analítica de datos en Python: DataFrames, modificar, transformar, ETL y analíticas con librería Pandas.
+Analítica de datos en Python: Desarrollo de procesos ETL, transformación y análisis de datos con Pandas y NumPy, gestión de archivos Excel y JSON, creación de visualizaciones con Matplotlib y Seaborn y automatización de tareas de procesamiento y exportación de datos.
 
-### Sprint 9: (pendiente)
+### Sprint 9:
+Visualización de datos: Python como herramienta de análisis visual para interpretar datos y extraer conclusiones de valor para el negocio. El enfoque principal está en el criterio analítico y el storytelling basado en datos. Google Colab como motor principal.
 
 ### Sprint 10: (pendiente)
 
