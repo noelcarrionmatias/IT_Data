@@ -1,5 +1,5 @@
 # Contenido:
-Tareas realizadas durante el Bootcamp Data Analytics impartido por Barcelona Activa con colaboración de la UPC (Universitat Politècnica de Barcelona). Consta de un bloque de fundamentos, para aprender la importancia y conceptos claves del análisis de datos. El segundo bloque de especialización está formado por "sprints", donde cada uno se especializa en un apartado del análisis de datos.
+Tareas realizadas durante el Bootcamp Data Analytics impartido por Barcelona Activa con colaboración de la UPC (Universitat Politècnica de Barcelona). Consta de un bloque de fundamentos en el cual se imparte conceptos claves del análisis de datos y aprender su importancia. El segundo bloque de especialización está formado por "sprints", donde cada uno se especializa en un apartado del análisis de datos. Al finalizar todo el proceso se realiza un proyecto final.
 
 ## Fundamentos:
 ### SQL:
