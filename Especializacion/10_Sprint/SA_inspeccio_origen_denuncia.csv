@@ -1,0 +1,101 @@
+,Codi_Districte,Data_Inspeccio,Codi_Establiment,Nom_Districte,Motiu_Inspeccio,Numero_Acta,Nom_Barri,Activitat_Establiment,Codi_Barri,Resultat_Global_Inspeccio,Motiu_Mesures_Cautelars,_id,Deficiencies_Detectades
+0,2,2024-08-27T00:00:00,247,L'Eixample,Queixa,DEN_0424,l'Antiga Esquerra de l'Eixample,Bars / Restaurants,8,Sense deficiències,NA,1,NA
+1,8,2024-12-24T00:00:00,399,Nou Barris,Queixa,DEN_0500,Porta,Bars / Restaurants,45,Amb deficiències,NA,2,Plagues
+2,5,2024-01-10T00:00:00,1292,Sarrià-Sant Gervasi,Queixa,DEN_0235,Sant Gervasi - Galvany,Bars / Restaurants,26,Sense deficiències,NA,3,NA
+3,2,2024-02-02T00:00:00,1303,L'Eixample,Queixa,DEN_0265,la Dreta de l'Eixample,Bars / Restaurants,7,Sense deficiències,NA,4,NA
+4,2,2024-05-30T00:00:00,1391,L'Eixample,Queixa,DEN_0366,Sant Antoni,Bars / Restaurants,10,Amb deficiències,NA,5,"Higiene, Estructurals/equips, Males pràctiques"
+5,2,2024-11-14T00:00:00,1391,L'Eixample,Seguiment queixa,DEN_0475,Sant Antoni,Bars / Restaurants,10,Sense deficiències,NA,6,NA
+6,2,2024-02-13T00:00:00,1462,L'Eixample,Queixa,DEN_0269,l'Antiga Esquerra de l'Eixample,Bars / Restaurants,8,Amb deficiències,NA,7,Males pràctiques
+7,2,2024-02-21T00:00:00,1462,L'Eixample,Seguiment queixa,DEN_0276,l'Antiga Esquerra de l'Eixample,Bars / Restaurants,8,Sense deficiències,NA,8,NA
+8,10,2024-12-23T00:00:00,1652,Sant Martí,Queixa,DEN_0497,la Vila Olímpica del Poblenou,Bars / Restaurants,67,Sense deficiències,NA,9,NA
+9,3,2024-02-21T00:00:00,1690,Sants-Montjuïc,Queixa,DEN_0277,Sants,Menjadors escolars,18,Sense deficiències,NA,10,NA
+10,4,2024-10-18T00:00:00,1783,Les Corts,Queixa,DEN_0455,Pedralbes,Menjadors escolars,21,Sense deficiències,NA,11,NA
+11,8,2024-01-15T00:00:00,1901,Nou Barris,Queixa,DEN_0239,el Turó de la Peira,Menjadors escolars,46,Amb deficiències,NA,12,"Etiquetatge, Estructurals/equips, Altres"
+12,8,2024-06-11T00:00:00,2122,Nou Barris,Queixa,DEN_0376,Porta,Menjadors escolars,45,Amb deficiències,NA,13,Plagues
+13,8,2024-07-03T00:00:00,2122,Nou Barris,Seguiment queixa,DEN_0386,Porta,Menjadors escolars,45,Amb deficiències,NA,14,Plagues
+14,8,2024-02-23T00:00:00,2428,Nou Barris,Queixa,DEN_0282,la Guineueta,Menjadors escolars,48,Sense deficiències,NA,15,NA
+15,6,2024-03-01T00:00:00,2497,Gràcia,Queixa,DEN_0290,la Vila de Gràcia,Menjadors socials,31,Amb deficiències,NA,16,"Higiene, Estructurals/equips, Males pràctiques"
+16,7,2024-07-17T00:00:00,2744,Horta-Guinardó,Queixa,DEN_0403,Can Baró,Centres de gent gran,34,Amb deficiències,NA,17,Higiene
+17,10,2024-06-13T00:00:00,2871,Sant Martí,Queixa,DEN_0378,el Poblenou,Centres de gent gran,68,Sense deficiències,NA,18,NA
+18,1,2024-06-10T00:00:00,3104,Ciutat Vella,Queixa,DEN_0373,el Raval,Supermercats / Queviures,1,Sense deficiències,NA,19,NA
+19,1,2024-04-25T00:00:00,3180,Ciutat Vella,Queixa,DEN_0332,el Raval,Supermercats / Queviures,1,Amb deficiències,NA,20,"Etiquetatge, Altres, Retirada de la venda, Emmagatzematge deficient d'aliments, Estructurals/equips, Higiene, Aliments amb data de consum preferent superat"
+20,9,2024-07-16T00:00:00,3379,Sant Andreu,Queixa,DEN_0402,Navas,Supermercats / Queviures,63,Amb deficiències,NA,21,Etiquetatge
+21,8,2024-08-13T00:00:00,7507,Nou Barris,Queixa,DEN_0419,la Prosperitat,Supermercats / Queviures,52,Sense deficiències,NA,22,NA
+22,7,2024-05-22T00:00:00,7519,Horta-Guinardó,Queixa,DEN_0358,el Carmel,Supermercats / Queviures,37,Sense deficiències,NA,23,NA
+23,10,2024-01-23T00:00:00,8046,Sant Martí,Queixa,DEN_0245,Provençals del Poblenou,Bars / Restaurants,71,Amb deficiències,NA,24,"Higiene, Etiquetatge, Estructurals/equips, Males pràctiques, Tabac, Emmagatzematge deficient d'aliments"
+24,1,2024-08-19T00:00:00,8356,Ciutat Vella,Queixa,DEN_0421,"Sant Pere, Santa Caterina i la Ribera",Fleca / Pastisseria,4,Amb deficiències,NA,25,"Higiene, Emmagatzematge deficient d'aliments, Estructurals/equips"
+25,9,2024-11-14T00:00:00,8683,Sant Andreu,Queixa,DEN_0474,el Congrés i els Indians,Bars / Restaurants,62,Amb deficiències,NA,26,Higiene
+26,2,2024-01-26T00:00:00,8779,L'Eixample,Queixa,DEN_0253,la Sagrada Família,Bars / Restaurants,6,Cessament activitat,"Presència de plagues, Manca de neteja",27,NA
+27,2,2024-08-12T00:00:00,8779,L'Eixample,Queixa,DEN_0418,la Sagrada Família,Bars / Restaurants,6,Sense deficiències,NA,28,NA
+28,2,2024-01-29T00:00:00,9207,L'Eixample,Queixa,DEN_0256,la Dreta de l'Eixample,Bars / Restaurants,7,Sense deficiències,NA,29,NA
+29,6,2024-09-30T00:00:00,9593,Gràcia,Queixa,DEN_0448,el Camp d'en Grassot i Gràcia Nova,Supermercats / Queviures,32,Sense deficiències,NA,30,NA
+30,2,2024-03-11T00:00:00,9995,L'Eixample,Queixa,DEN_0296,Sant Antoni,Fleca / Pastisseria,10,Sense deficiències,NA,31,NA
+31,3,2024-02-12T00:00:00,10305,Sants-Montjuïc,Queixa,DEN_0267,el Poble Sec,Bars / Restaurants,11,Amb deficiències,NA,32,"Estructurals/equips, Traçabilitat"
+32,8,2024-10-01T00:00:00,10641,Nou Barris,Queixa,DEN_0450,Verdun,Fleca / Pastisseria,51,Sense deficiències,NA,33,NA
+33,2,2024-03-14T00:00:00,10710,L'Eixample,Queixa,DEN_0301,Sant Antoni,Bars / Restaurants,10,Sense deficiències,NA,34,NA
+34,7,2024-07-10T00:00:00,11056,Horta-Guinardó,Queixa,DEN_0392,el Carmel,Bars / Restaurants,37,Amb deficiències,NA,35,Plagues
+35,7,2024-09-09T00:00:00,11056,Horta-Guinardó,Seguiment queixa,DEN_0436,el Carmel,Bars / Restaurants,37,Amb deficiències,NA,36,Plagues
+36,1,2024-07-25T00:00:00,11260,Ciutat Vella,Queixa,DEN_0413,"Sant Pere, Santa Caterina i la Ribera",Supermercats / Queviures,4,Amb deficiències,NA,37,"Aliments  caducats o no aptes pel consum, Aliments amb data de consum preferent superat, Retirada de la venda"
+37,9,2024-08-01T00:00:00,11586,Sant Andreu,Queixa,DEN_0416,Sant Andreu,Supermercats / Queviures,60,Sense deficiències,NA,38,NA
+38,2,2024-07-03T00:00:00,11679,L'Eixample,Queixa,DEN_0387,la Dreta de l'Eixample,Bars / Restaurants,7,Sense deficiències,NA,39,NA
+39,1,2024-05-13T00:00:00,11816,Ciutat Vella,Queixa,DEN_0346,el Raval,Bars / Restaurants,1,Sense deficiències,NA,40,NA
+40,10,2024-03-26T00:00:00,11842,Sant Martí,Queixa,DEN_0312,la Vila Olímpica del Poblenou,Bars / Restaurants,67,Sense deficiències,NA,41,NA
+41,10,2024-06-25T00:00:00,11854,Sant Martí,Queixa,DEN_0380,el Parc i la Llacuna del Poblenou,Bars / Restaurants,66,Sense deficiències,NA,42,NA
+42,6,2024-07-23T00:00:00,12114,Gràcia,Queixa,DEN_0408,la Vila de Gràcia,Bars / Restaurants,31,Sense deficiències,NA,43,NA
+43,10,2024-11-18T00:00:00,12251,Sant Martí,Queixa,DEN_0476,el Poblenou,Bars / Restaurants,68,Sense deficiències,NA,44,NA
+44,1,2024-06-10T00:00:00,12505,Ciutat Vella,Queixa,DEN_0374,la Barceloneta,Bars / Restaurants,3,Sense deficiències,NA,45,NA
+45,1,2024-11-18T00:00:00,12647,Ciutat Vella,Queixa,DEN_0477,el Barri Gòtic,Fruiteria,2,Amb deficiències,NA,46,Etiquetatge
+46,2,2024-12-16T00:00:00,12783,L'Eixample,Queixa,DEN_0493,la Dreta de l'Eixample,Bars / Restaurants,7,Sense deficiències,NA,47,NA
+47,9,2024-02-26T00:00:00,12806,Sant Andreu,Queixa,DEN_0284,el Congrés i els Indians,Supermercats / Queviures,62,Sense deficiències,NA,48,NA
+48,2,2024-07-29T00:00:00,12909,L'Eixample,Queixa,DEN_0415,el Fort Pienc,Bars / Restaurants,5,Sense deficiències,NA,49,NA
+49,3,2024-01-24T00:00:00,12949,Sants-Montjuïc,Queixa,DEN_0249,el Poble Sec,Supermercats / Queviures,11,Cessament activitat,"Manca de neteja, Presència de plagues",50,NA
+50,8,2024-03-20T00:00:00,13316,Nou Barris,Queixa,DEN_0306,Porta,Bars / Restaurants,45,Amb deficiències,NA,51,Higiene
+51,1,2024-06-11T00:00:00,13326,Ciutat Vella,Queixa,DEN_0375,la Barceloneta,Bars / Restaurants,3,Cessament activitat,Manca de neteja,52,NA
+52,3,2024-06-13T00:00:00,13412,Sants-Montjuïc,Queixa,DEN_0377,la Marina del Prat Vermell,Menjadors socials,12,Amb deficiències,NA,53,Estructurals/equips
+53,6,2024-08-27T00:00:00,13477,Gràcia,Queixa,DEN_0425,la Vila de Gràcia,Bars / Restaurants,31,Sense deficiències,NA,54,NA
+54,5,2024-04-23T00:00:00,13746,Sarrià-Sant Gervasi,Queixa,DEN_0331,Sant Gervasi - Galvany,Fleca / Pastisseria,26,Amb deficiències,NA,55,Estructurals/equips
+55,2,2024-06-10T00:00:00,13836,L'Eixample,Queixa,DEN_0372,Sant Antoni,Bars / Restaurants,10,Cessament activitat,Manca de neteja,56,NA
+56,2,2024-03-26T00:00:00,13884,L'Eixample,Queixa,DEN_0316,la Dreta de l'Eixample,Bars / Restaurants,7,Amb deficiències,NA,57,Altres
+57,2,2024-06-03T00:00:00,13884,L'Eixample,Seguiment queixa,DEN_0368,la Dreta de l'Eixample,Bars / Restaurants,7,Sense deficiències,NA,58,NA
+58,1,2024-03-11T00:00:00,14362,Ciutat Vella,Queixa,DEN_0298,el Raval,Bars / Restaurants,1,Sense deficiències,NA,59,NA
+59,8,2024-02-21T00:00:00,14420,Nou Barris,Queixa,DEN_0279,Porta,Bars / Restaurants,45,Amb deficiències,NA,60,"Higiene, Etiquetatge, Emmagatzematge deficient d'aliments, Altres"
+60,10,2024-07-09T00:00:00,14480,Sant Martí,Queixa,DEN_0390,Sant Martí de Provençals,Bars / Restaurants,72,Cessament activitat,Presència de plagues,61,NA
+61,10,2024-07-12T00:00:00,14480,Sant Martí,Seguiment queixa,DEN_0395,Sant Martí de Provençals,Bars / Restaurants,72,Sense deficiències,NA,62,NA
+62,3,2024-01-17T00:00:00,15361,Sants-Montjuïc,Queixa,DEN_0242,Sants,Supermercats / Queviures,18,Sense deficiències,NA,63,NA
+63,5,2024-05-29T00:00:00,15747,Sarrià-Sant Gervasi,Queixa,DEN_0365,Sant Gervasi - la Bonanova,Supermercats / Queviures,25,Sense deficiències,NA,64,NA
+64,6,2024-05-09T00:00:00,16642,Gràcia,Queixa,DEN_0343,la Vila de Gràcia,Fleca / Pastisseria,31,Sense deficiències,NA,65,NA
+65,10,2024-12-16T00:00:00,17124,Sant Martí,Queixa,DEN_0491,Diagonal Mar i el Front Marítim del Poblenou,Bars / Restaurants,69,Amb deficiències,NA,66,"Estructurals/equips, Males pràctiques"
+66,3,2024-05-15T00:00:00,17520,Sants-Montjuïc,Queixa,DEN_0350,Sants,Peixateria,18,Amb deficiències,NA,67,Altres
+67,1,2024-02-28T00:00:00,17897,Ciutat Vella,Queixa,DEN_0287,el Raval,Bars / Restaurants,1,Amb deficiències,NA,68,Altres
+68,10,2024-12-16T00:00:00,18051,Sant Martí,Queixa,DEN_0492,la Vila Olímpica del Poblenou,Bars / Restaurants,67,Cessament activitat,Presència de plagues,69,NA
+69,2,2024-03-13T00:00:00,18179,L'Eixample,Queixa,DEN_0300,la Sagrada Família,Menjadors escolars,6,Amb deficiències,NA,70,Plagues
+70,10,2024-01-24T00:00:00,19254,Sant Martí,Queixa,DEN_0246,el Besòs i el Maresme,Bars / Restaurants,70,Amb deficiències,NA,71,"Higiene, Emmagatzematge deficient d'aliments"
+71,5,2024-08-07T00:00:00,19316,Sarrià-Sant Gervasi,Queixa,DEN_0417,Sant Gervasi - Galvany,Bars / Restaurants,26,Sense deficiències,NA,72,NA
+72,8,2024-12-27T00:00:00,19903,Nou Barris,Queixa,DEN_0501,Vilapicina i la Torre Llobeta,Bars / Restaurants,44,Amb deficiències,NA,73,"Tabac, Estructurals/equips, Higiene, Etiquetatge"
+73,2,2024-05-16T00:00:00,20021,L'Eixample,Queixa,DEN_0351,l'Antiga Esquerra de l'Eixample,Fleca / Pastisseria,8,Amb deficiències,NA,74,Rentavaixelles
+74,2,2024-08-30T00:00:00,20051,L'Eixample,Queixa,DEN_0428,la Nova Esquerra de l'Eixample,Bars / Restaurants,9,Amb deficiències,NA,75,Higiene
+75,5,2024-05-29T00:00:00,20170,Sarrià-Sant Gervasi,Queixa,DEN_0364,Sant Gervasi - Galvany,Bars / Restaurants,26,Cessament activitat,"Presència de plagues, Manca de neteja",76,NA
+76,2,2024-07-17T00:00:00,20204,L'Eixample,Queixa,DEN_0404,la Dreta de l'Eixample,Fleca / Pastisseria,7,Amb deficiències,NA,77,"Higiene, Altres"
+77,8,2024-05-21T00:00:00,20208,Nou Barris,Queixa,DEN_0354,Can Peguera,Bars / Restaurants,47,Amb deficiències,NA,78,"Plagues, Higiene, Etiquetatge"
+78,1,2024-01-24T00:00:00,20468,Ciutat Vella,Queixa,DEN_0248,el Raval,Bars / Restaurants,1,Amb deficiències,NA,79,"Etiquetatge, Rentavaixelles, Altres"
+79,7,2024-10-07T00:00:00,20562,Horta-Guinardó,Queixa,DEN_0451,Horta,Supermercats / Queviures,43,Amb deficiències,NA,80,Aliments amb data de consum preferent superat
+80,6,2024-01-24T00:00:00,20640,Gràcia,Queixa,DEN_0247,el Camp d'en Grassot i Gràcia Nova,Carnisseria,32,Cessament activitat,Manca de neteja,81,NA
+81,2,2024-04-02T00:00:00,20692,L'Eixample,Queixa,DEN_0317,Sant Antoni,Bars / Restaurants,10,Sense deficiències,NA,82,NA
+82,5,2024-01-09T00:00:00,20700,Sarrià-Sant Gervasi,Queixa,DEN_0231,Sant Gervasi - la Bonanova,Bars / Restaurants,25,Cessament activitat,Manca de neteja,83,NA
+83,2,2024-03-11T00:00:00,20797,L'Eixample,Queixa,DEN_0297,la Sagrada Família,Supermercats / Queviures,6,Sense deficiències,NA,84,NA
+84,7,2024-10-01T00:00:00,20933,Horta-Guinardó,Queixa,DEN_0449,la Teixonera,Supermercats / Queviures,38,Sense deficiències,NA,85,NA
+85,3,2024-04-30T00:00:00,20942,Sants-Montjuïc,Queixa,DEN_0337,la Marina de Port,Bars / Restaurants,13,Sense deficiències,NA,86,NA
+86,9,2024-05-28T00:00:00,21069,Sant Andreu,Queixa,DEN_0363,el Congrés i els Indians,Bars / Restaurants,62,Amb deficiències,NA,87,"Plagues, Higiene"
+87,1,2024-06-28T00:00:00,21100,Ciutat Vella,Queixa,DEN_0383,"Sant Pere, Santa Caterina i la Ribera",Fleca / Pastisseria,4,Amb deficiències,NA,88,"Estructurals/equips, Males pràctiques"
+88,1,2024-01-09T00:00:00,21458,Ciutat Vella,Queixa,DEN_0234,el Raval,Bars / Restaurants,1,Sense deficiències,NA,89,NA
+89,1,2024-04-22T00:00:00,21499,Ciutat Vella,Queixa,DEN_0329,la Barceloneta,Bars / Restaurants,3,Amb deficiències,NA,90,"Higiene, Males pràctiques, Emmagatzematge deficient d'aliments"
+90,2,2024-02-06T00:00:00,22000,L'Eixample,Queixa,DEN_0266,la Dreta de l'Eixample,Bars / Restaurants,7,Amb deficiències,NA,91,"Aliments amb data de consum preferent superat, Aliments no aptes pel consum"
+91,10,2024-09-03T00:00:00,22013,Sant Martí,Queixa,DEN_0429,el Parc i la Llacuna del Poblenou,Bars / Restaurants,66,Sense deficiències,NA,92,NA
+92,8,2024-05-31T00:00:00,22429,Nou Barris,Queixa,DEN_0367,Verdun,Carnisseria,51,Amb deficiències,NA,93,Etiquetatge
+93,2,2024-12-10T00:00:00,22481,L'Eixample,Queixa,DEN_0484,Sant Antoni,Supermercats / Queviures,10,Cessament activitat,Manca d'aigua,94,NA
+94,2,2024-12-13T00:00:00,22481,L'Eixample,Seguiment queixa,DEN_0489,Sant Antoni,Supermercats / Queviures,10,Sense deficiències,NA,95,NA
+95,1,2024-09-04T00:00:00,22784,Ciutat Vella,Queixa,DEN_0433,el Raval,Fleca / Pastisseria,1,Amb deficiències,NA,96,Altres
+96,4,2024-11-21T00:00:00,23248,Les Corts,Queixa,DEN_0479,les Corts,Fleca / Pastisseria,19,Sense deficiències,NA,97,NA
+97,8,2024-07-23T00:00:00,23279,Nou Barris,Queixa,DEN_0409,Verdun,Bars / Restaurants,51,Sense deficiències,NA,98,NA
+98,9,2024-12-23T00:00:00,23283,Sant Andreu,Queixa,DEN_0499,la Sagrera,Bars / Restaurants,61,Amb deficiències,NA,99,"Higiene, Males pràctiques, Estructurals/equips, Rentavaixelles, Emmagatzematge deficient d'aliments"
+99,5,2024-06-27T00:00:00,23302,Sarrià-Sant Gervasi,Queixa,DEN_0382,Sant Gervasi - la Bonanova,Peixateria,25,Amb deficiències,NA,100,Higiene
