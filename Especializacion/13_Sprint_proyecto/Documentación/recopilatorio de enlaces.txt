@@ -6,3 +6,4 @@ http://data.europa.eu
 https://www.datosabiertos.miteco.gob.es/es/catalogo-de-datos.html
 https://www.meteo.cat/wpweb/serveis/dades-obertes/
 https://www.meteoalarm.org/es/live/page/website-guide#list
+eumetsat
